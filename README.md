@@ -51,6 +51,13 @@ Module not found: Error: Can't resolve 'fs' in '/Users/yanu/Documents/learn-reac
  @ ./node_modules/express/lib/express.js
  @ ./node_modules/express/index.js
  @ ./src/server.js
+
+ERROR in ./node_modules/express/lib/request.js
+Module not found: Error: Can't resolve 'net' in '/Users/yanu/Documents/learn-react/express-react/node_modules/express/lib'
+ @ ./node_modules/express/lib/request.js 18:11-25
+ @ ./node_modules/express/lib/express.js
+ @ ./node_modules/express/index.js
+ @ ./src/server.js
 ```
 
 Itu terjadi karena secara default, `webpack` menganggap aplikasi yang akan di-bundle adalah aplikasi yang berjalan di browser (Chrome, Firefox, Safari). Module-module yang diperlukan `express` (seperti `fs` dan `net`) tidak akan ada di sana. Module-module tersebut hanya ditemukan di lingkungan server (Node.js). Oleh karena itu kita harus mengkonfigurasi webpack agar menggunakan lingkungan Node.js.
