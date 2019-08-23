@@ -111,15 +111,61 @@ $ node dist/main.js
 ## NPM Script
 Update file `package.json`. Pada bagian `script`, tambahkan `start` dan `build`:
 ```json
-  "scripts": {
-    "start": "node dist/main.js",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "start": "node dist/main.js",
+  "build": "webpack",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
 ```
 
 Jalankan start dan build:
 ```
 $ npm run build
 $ npm start
+```
+
+## Mengubah Nama File Ouput
+
+Nama output file webpack bisa kita ganti. Dari yang sebelumnya `main.js` menjadi `server.js`. 
+
+Update `webpack.config.js`:
+```js
+const nodeExternals = require('webpack-node-externals')
+
+module.exports = {
+  mode: 'development',
+  entry: {
+    server:'./src/server.js'
+  },
+  target: 'node',
+  externals: [nodeExternals()]
+}
+```
+
+Update `package.json` bagian `start` dan `build`:
+```json
+"scripts": {
+  "start": "node dist/server.js",
+  "build": "rm -rf dist && webpack",
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+```
+
+Jalankan build:
+```
+$ npm run build
+```
+
+Periksa isi folder `dist`:
+```
+$ tree dist
+dist
+└── server.js
+
+0 directories, 1 file
+```
+
+Jalankan start:
+```
+$ npn start
 ```
