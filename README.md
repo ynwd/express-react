@@ -148,7 +148,7 @@ Update `package.json` bagian `start` dan `build`:
 ```json
 "scripts": {
   "start": "node dist/server.js",
-  "build": "rm -rf dist && webpack",
+  "build": "webpack",
   "test": "echo \"Error: no test specified\" && exit 1"
 }
 ```
@@ -158,14 +158,7 @@ Jalankan build:
 $ npm run build
 ```
 
-Periksa isi folder `dist`:
-```
-$ tree dist
-dist
-└── server.js
-
-0 directories, 1 file
-```
+Periksa isi folder `dist`. Pastikan ada file `server.js` di dalamnya.
 
 Jalankan start:
 ```
