@@ -1,4 +1,4 @@
-# express-react
+# Setup Express dan Webpack
 
 ## Setup Express
 
@@ -106,4 +106,20 @@ Tidak ada lagi pesan error dan warning. Ukuran file `dist/main.js` juga jauh leb
 Sekarang jalankan `dist/main.js`:
 ```
 $ node dist/main.js
+```
+
+## NPM Script
+Update file `package.json`. Pada bagian `script`, tambahkan `start` dan `build`:
+```json
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+Jalankan start dan build:
+```
+$ npm run build
+$ npm start
 ```
