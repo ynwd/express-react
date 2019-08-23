@@ -77,9 +77,11 @@ $ npx webpack
 ```
 Kali ini tidak secara eksplisit menulis `src/server.js` karena sudah dituliskan di file konfigurasi. Sekarang error tidak lagi muncul.
 
-Jika tidak ada error, perintah di atas akan menghasilkan file `dist/main.js`. Coba periksa. Ukurannya cukup besar. Itu terjadi karena semua modul yang diperlukan express, di-bundle oleh `webpack`. Tentu saja itu sebuah pemborosan karena di lingkungan server, sudah ada folder `node_modules` yang berisi semua module.
+Jika tidak ada error, perintah di atas akan menghasilkan file `dist/main.js`. Coba periksa. 
 
-Install `webpack-node-externals`:
+Ukurannya cukup besar. Itu terjadi karena semua modul yang diperlukan express, di-bundle oleh `webpack`. Tentu saja itu sebuah pemborosan karena di lingkungan server, sudah ada folder `node_modules` yang berisi semua module.
+
+Solusinya, install `webpack-node-externals`:
 ```
 npm i webpack-node-externals -D
 ```
@@ -109,7 +111,7 @@ $ node dist/main.js
 ```
 
 ## NPM Script
-Update file `package.json`. Pada bagian `script`, tambahkan `start` dan `build`:
+Update file `package.json`. Pada bagian `scripts`, tambahkan `start` dan `build`:
 ```json
 "scripts": {
   "start": "node dist/main.js",
