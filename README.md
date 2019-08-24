@@ -26,49 +26,53 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    $ npm install -g firebase-tools
    ```
 2. Update file `src/server.js`:
-   ```js
-   const functions = require("firebase-functions")
-   const express = require("express")
 
-   const app = express()
+   ```js
+   const functions = require("firebase-functions");
+   const express = require("express");
+
+   const app = express();
 
    app.get("*", (req, res) => {
-    res.send("Hello from Express on Firebase!")
-   })
+     res.send("Hello from Express on Firebase!");
+   });
 
-   exports.api = functions.https.onRequest(app)
+   exports.api = functions.https.onRequest(app);
    ```
+
 3. Install firebase-functions:
    ```
-   $ npm i firebase-functions
-   ```   
+   $ npm i firebase-functions firebase-admin
+   ```
 4. Update webpack.config.js:
+
    ```js
-   const pkg = require('./package')
-   const GenerateJsonPlugin = require('generate-json-webpack-plugin')
-   const nodeExternals = require('webpack-node-externals')
+   const pkg = require("./package");
+   const GenerateJsonPlugin = require("generate-json-webpack-plugin");
+   const nodeExternals = require("webpack-node-externals");
 
    const genPackage = () => ({
-     main: 'server.js',
+     main: "server.js",
      engines: {
-       "node": "8"
+       node: "8"
      },
      dependencies: pkg.dependencies
-   })
+   });
 
    module.exports = {
-     mode: 'production',
+     mode: "production",
      entry: {
-       server: './src/index.js'
+       server: "./src/index.js"
      },
-     target: 'node',
+     target: "node",
      output: {
-       libraryTarget: 'commonjs'
+       libraryTarget: "commonjs"
      },
      externals: [nodeExternals()],
-     plugins: [new GenerateJsonPlugin('package.json', genPackage())]
-   }
+     plugins: [new GenerateJsonPlugin("package.json", genPackage())]
+   };
    ```
+
 5. Install generate-json-webpack-plugin:
    ```
    $ npm i generate-json-webpack-plugin -D
@@ -78,29 +82,71 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    $ firebase login
    ```
 7. Inisiasi Hosting. Pilih `Hosting: Configure and deploy Firebase Hosting sites`:
+
    ```
    $ firebase init
    ```
-   Proses ini akan menghasilkan 2 file: `.firebaserc` dan `firebase.json`.
-8. Update file `firebase.json`:
+
+   Proses ini akan menghasilkan:
+
+   - file `.firebaserc`
+   - file `firebase.json`.
+   - folder `public` dan file `index.html` di dalamnya.
+
+8. Update file `firebase.json`. Tambahkan `functions`:
    ```json
    {
-      "functions": {
-        "source": "dist"
-      },
-      "hosting": {
-        "public": "public",
-        "ignore": [
-          "firebase.json",
-          "**/.*",
-          "**/node_modules/**"
-        ],
-        "rewrites": [
-          {
-            "source": "**",
-            "function": "api"      
-          }
-        ]
-      }
-    }
+     "functions": {
+       "source": "dist"
+     },
+     "hosting": {
+       "public": "public",
+       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+       "rewrites": [
+         {
+           "source": "**",
+           "function": "api"
+         }
+       ]
+     }
+   }
    ```
+9. Jalankan webpack:
+   ```
+    $ npx webpack
+   ```
+10. Masuk ke folder `dist`. Install package di dalamnya:
+
+    ```
+    $ cd dist
+    $ npm install
+    ```
+
+11. Deploy ke server:
+
+    ```
+    $ firebase deploy
+    === Deploying to 'hello-6d31f'...
+
+    i  deploying functions, hosting
+    i  functions: ensuring necessary APIs are enabled...
+    ✔  functions: all necessary APIs are enabled
+    i  functions: preparing dist directory for uploading...
+    i  functions: packaged dist (8.38 KB) for uploading
+    ✔  functions: dist folder uploaded successfully
+    i  hosting[hello-6d31f]: beginning deploy...
+    i  hosting[hello-6d31f]: found 1 files in public
+    ✔  hosting[hello-6d31f]: file upload complete
+    i  functions: creating Node.js 8 function api(us-central1)...
+    ✔  functions[api(us-central1)]: Successful create operation.
+    Function URL (api): https://us-central1-hello-6d31f.cloudfunctions.net/api
+    i  hosting[hello-6d31f]: finalizing version...
+    ✔  hosting[hello-6d31f]: version finalized
+    i  hosting[hello-6d31f]: releasing new version...
+    ✔  hosting[hello-6d31f]: release complete
+
+    ✔  Deploy complete!
+
+    Project Console: https://console.firebase.google.com/project/hello-6d31f/overview
+    Hosting URL: https://hello-6d31f.firebaseapp.com
+    ```
