@@ -38,3 +38,7 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
 
    exports.api = functions.https.onRequest(app)
    ```
+3. Install firebase-functions
+   ```
+   $ npm i firebase-functions
+   ```
