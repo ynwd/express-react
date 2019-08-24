@@ -150,3 +150,4 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
     Project Console: https://console.firebase.google.com/project/hello-6d31f/overview
     Hosting URL: https://hello-6d31f.firebaseapp.com
     ```
+    End point fungsi yang telah kita buat bisa diakses di: [https://hello-6d31f.firebaseapp.com/api](https://hello-6d31f.firebaseapp.com/api)
