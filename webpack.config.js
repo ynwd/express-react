@@ -1,10 +1,24 @@
+const pkg = require('./package')
+const GenerateJsonPlugin = require('generate-json-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
 
+const genPackage = () => ({
+  main: 'server.js',
+  engines: {
+    "node": "8"
+  },
+  dependencies: pkg.dependencies
+})
+
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    server:'./src/server.js'
+    server: `${__dirname}/src/index.js`
   },
   target: 'node',
-  externals: [nodeExternals()]
+  output: {
+    libraryTarget: 'commonjs'
+  },
+  externals: [nodeExternals()],
+  plugins: [new GenerateJsonPlugin('package.json', genPackage())]
 }

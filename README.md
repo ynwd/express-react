@@ -38,7 +38,38 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
 
    exports.api = functions.https.onRequest(app)
    ```
-3. Install firebase-functions
+3. Install firebase-functions:
    ```
    $ npm i firebase-functions
+   ```   
+4. Update webpack.config.js:
+   ```js
+   const pkg = require('./package')
+   const GenerateJsonPlugin = require('generate-json-webpack-plugin')
+   const nodeExternals = require('webpack-node-externals')
+
+   const genPackage = () => ({
+     main: 'server.js',
+     engines: {
+       "node": "8"
+     },
+     dependencies: pkg.dependencies
+   })
+
+   module.exports = {
+     mode: 'production',
+     entry: {
+       server: `${__dirname}/src/index.js`
+     },
+     target: 'node',
+     output: {
+       libraryTarget: 'commonjs'
+     },
+     externals: [nodeExternals()],
+     plugins: [new GenerateJsonPlugin('package.json', genPackage())]
+   }
+   ```
+5. Install generate-json-webpack-plugin:
+   ```
+   $ npm i generate-json-webpack-plugin -D
    ```
