@@ -73,3 +73,34 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    ```
    $ npm i generate-json-webpack-plugin -D
    ```
+6. Login ke firebase:
+   ```
+   $ firebase login
+   ```
+7. Inisiasi Hosting. Pilih `Hosting: Configure and deploy Firebase Hosting sites`:
+   ```
+   $ firebase init
+   ```
+   Proses ini akan menghasilkan 2 file: `.firebaserc` dan `firebase.json`.
+8. Update file `firebase.json`:
+   ```json
+   {
+      "functions": {
+        "source": "dist"
+      },
+      "hosting": {
+        "public": "public",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "rewrites": [
+          {
+            "source": "**",
+            "function": "api"      
+          }
+        ]
+      }
+    }
+   ```
