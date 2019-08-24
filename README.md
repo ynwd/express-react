@@ -59,7 +59,7 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    module.exports = {
      mode: 'production',
      entry: {
-       server: `${__dirname}/src/index.js`
+       server: './src/index.js'
      },
      target: 'node',
      output: {

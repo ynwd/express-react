@@ -13,7 +13,7 @@ const genPackage = () => ({
 module.exports = {
   mode: 'production',
   entry: {
-    server: `${__dirname}/src/index.js`
+    server: './src/server.js'
   },
   target: 'node',
   output: {
