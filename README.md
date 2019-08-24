@@ -18,3 +18,23 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    ![](images/create_sukses.png)
 7. Berikut tampilan dashboard proyek. Proses pembuatan proyek selesai.
    ![](images/dashboard.png)
+
+## Setup Firebase
+
+1. Instal firebase-tools
+   ```
+   $ npm install -g firebase-tools
+   ```
+2. Update file `src/server.js`:
+   ```js
+   const functions = require("firebase-functions")
+   const express = require("express")
+
+   const app = express()
+
+   app.get("*", (req, res) => {
+    res.send("Hello from Express on Firebase!")
+   })
+
+   exports.api = functions.https.onRequest(app)
+   ```
