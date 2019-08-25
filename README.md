@@ -151,3 +151,14 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
     Hosting URL: https://hello-6d31f.firebaseapp.com
     ```
     End point fungsi yang telah kita buat bisa diakses di: [https://hello-6d31f.firebaseapp.com/api](https://hello-6d31f.firebaseapp.com/api)
+
+
+12. Update NPM Script.
+    ```json
+     "scripts": {
+      "build": "webpack --watch",
+      "start": "firebase serve",
+      "deploy": "webpack && cd dist && npm install && firebase deploy",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    ```
