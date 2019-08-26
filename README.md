@@ -1,11 +1,5 @@
 # Express & React on Firebase
 
-<<<<<<< HEAD
-|No|Step|Branch|
-|--|--|--|
-|1|Setup Express|[setup-express](https://github.com/ynwd/express-react/tree/setup-express)|
-|2|Setup Firebase|[setup-firebase](https://github.com/ynwd/express-react/tree/setup-firebase)|
-=======
 Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bisa mendapatkannya secara gratis. Bagaimana caranya?
 
 ## Create Firebase Project
@@ -168,4 +162,3 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     ```
->>>>>>> setup-firebase
