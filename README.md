@@ -93,6 +93,8 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    - file `firebase.json`.
    - folder `public` dan file `index.html` di dalamnya.
 
+   Hapus saja file `index.html` karena tidak kita perlukan.
+
 8. Update file `firebase.json`. Tambahkan `functions`:
    ```json
    {
