@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.js",
-    "build": "webpack",
+    "build": "webpack --watch",
+    "start": "firebase serve",
+    "deploy": "webpack && cd dist && npm install && firebase deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
