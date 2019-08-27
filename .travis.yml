@@ -5,7 +5,9 @@ cache:
   directories:
     - node_modules
 script:
-  - npm install --prefix dist
+  - cd dist
+  - npm install
+  - cd ..
 deploy:
   provider: firebase
   token:
