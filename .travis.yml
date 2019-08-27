@@ -6,9 +6,12 @@ install:
   - npm install
 script:
   - webpack
-skip_cleanup: true
+  - cd dist
+  - git add .
+  - git commit -am 'add'
 deploy:
   provider: firebase
   token:
     secure: "1/IMxhVNXJNiSg9tEKKkp01H4mbWzvC5CQLhzvPHpM9y0"
   project: "hello-6d31f"
+  skip_cleanup: true
