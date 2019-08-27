@@ -7,6 +7,9 @@ const genPackage = () => ({
   engines: {
     node: '8'
   },
+  scripts: {
+    build: 'npm install'
+  },
   dependencies: pkg.dependencies,
   devDependencies: pkg.devDependencies
 
