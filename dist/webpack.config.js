@@ -12,7 +12,6 @@ const genPackage = () => ({
   },
   dependencies: pkg.dependencies,
   devDependencies: pkg.devDependencies
-
 })
 
 module.exports = {
