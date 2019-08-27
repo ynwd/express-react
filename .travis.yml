@@ -8,6 +8,7 @@ script:
   - webpack
   - cd dist
   - git add .
+  - cd ..
 deploy:
   provider: firebase
   token:
