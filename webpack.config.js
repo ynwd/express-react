@@ -8,7 +8,7 @@ const genPackage = () => ({
     node: '8'
   },
   scripts: {
-    install: 'npm install'
+    build: 'npm install'
   },
   dependencies: pkg.dependencies,
   private: true
