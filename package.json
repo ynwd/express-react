@@ -6,6 +6,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "start": "firebase serve",
+    "deploy": "npm run build && firebase deploy"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "firebase-admin": "^8.4.0",

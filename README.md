@@ -47,30 +47,34 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
 4. Update webpack.config.js:
 
    ```js
-   const pkg = require("./package");
-   const GenerateJsonPlugin = require("generate-json-webpack-plugin");
-   const nodeExternals = require("webpack-node-externals");
+    const pkg = require('./package')
+    const GenerateJsonPlugin = require('generate-json-webpack-plugin')
+    const nodeExternals = require('webpack-node-externals')
 
-   const genPackage = () => ({
-     main: "server.js",
-     engines: {
-       node: "8"
-     },
-     dependencies: pkg.dependencies
-   });
+    const genPackage = () => ({
+      main: 'server.js',
+      engines: {
+        node: '8'
+      },
+      scripts: {
+        install: 'npm install'
+      },
+      dependencies: pkg.dependencies,
+      private: true
+    })
 
-   module.exports = {
-     mode: "production",
-     entry: {
-       server: "./src/index.js"
-     },
-     target: "node",
-     output: {
-       libraryTarget: "commonjs"
-     },
-     externals: [nodeExternals()],
-     plugins: [new GenerateJsonPlugin("package.json", genPackage())]
-   };
+    module.exports = {
+      mode: 'production',
+      entry: {
+        server: './src/server.js'
+      },
+      target: 'node',
+      output: {
+        libraryTarget: 'commonjs'
+      },
+      externals: [nodeExternals()],
+      plugins: [new GenerateJsonPlugin('package.json', genPackage())]
+    }
    ```
 
 5. Install generate-json-webpack-plugin:
@@ -93,13 +97,14 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    - file `firebase.json`.
    - folder `public` dan file `index.html` di dalamnya.
 
-   Hapus saja file `index.html` karena tidak kita perlukan.
+   Rename file `index.html` menjadi `default.html` agar fungsi tidak ditimpa file `index.html`.
 
 8. Update file `firebase.json`. Tambahkan `functions`:
    ```json
    {
      "functions": {
-       "source": "dist"
+       "source": "dist",
+       "predeploy": "npm --prefix \"$RESOURCE_DIR\" run install"
      },
      "hosting": {
        "public": "public",
@@ -156,9 +161,9 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
 12. Update NPM Script.
     ```json
      "scripts": {
-      "build": "webpack --watch",
-      "start": "firebase serve",
-      "deploy": "webpack && cd dist && npm install && firebase deploy",
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
+        "watch": "webpack --watch",
+        "build": "webpack",
+        "start": "firebase serve",
+        "deploy": "npm run build && firebase deploy"
+      }
     ```

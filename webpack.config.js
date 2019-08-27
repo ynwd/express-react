@@ -8,11 +8,10 @@ const genPackage = () => ({
     node: '8'
   },
   scripts: {
-    build: 'npm install'
+    install: 'npm install'
   },
   dependencies: pkg.dependencies,
-  devDependencies: pkg.devDependencies
-
+  private: true
 })
 
 module.exports = {
