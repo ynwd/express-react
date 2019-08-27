@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "webpack",
-    "start": "firebase serve",
-    "deploy": "webpack && cd dist && npm install && firebase deploy"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
