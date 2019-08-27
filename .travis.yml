@@ -7,6 +7,9 @@ cache:
 install:
   - npm install -g firebase-tools
   - npm install
+scripts:
+  - cd dist 
+  - npm run build
 deploy:
   provider: firebase
   token:
