@@ -5,10 +5,7 @@ install:
   - npm install -g firebase-tools
   - npm install
 script:
-  - webpack
-  - cd dist
-  - git add .
-  - cd ..
+  - npm run build
 deploy:
   provider: firebase
   token:
