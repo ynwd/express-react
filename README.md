@@ -85,13 +85,12 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
    ```
    $ firebase login
    ```
-7. Inisiasi Hosting. Pilih `Hosting: Configure and deploy Firebase Hosting sites`:
+7. Inisiasi Hosting:
 
    ```
    $ firebase init
    ```
-
-   Proses ini akan menghasilkan:
+   Pilih hosting dan function. Proses ini akan menghasilkan:
 
    - file `.firebaserc`
    - file `firebase.json`.
@@ -162,8 +161,8 @@ Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bis
     ```json
      "scripts": {
         "watch": "webpack --watch",
-        "build": "webpack",
+        "build": "webpack && npm install --prefix dist",
         "start": "firebase serve",
         "deploy": "npm run build && firebase deploy"
-      }
+      },
     ```
