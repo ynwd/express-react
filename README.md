@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/ynwd/express-react.svg?branch=master)](https://travis-ci.com/ynwd/express-react)
 # Express & React on Firebase
 
 Kata orang, hosting aplikasi node.js itu mahal. Tidak. Dengan firebase, kita bisa mendapatkannya secara gratis. Bagaimana caranya?
