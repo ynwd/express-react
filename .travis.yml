@@ -1,0 +1,5 @@
+deploy:
+  provider: firebase
+  token:
+    secure: "1/IMxhVNXJNiSg9tEKKkp01H4mbWzvC5CQLhzvPHpM9y0"
+  project: "hello-6d31f"
