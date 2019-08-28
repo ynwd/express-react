@@ -1,19 +1,38 @@
-# Setup CI/CD dengan Travis-CI
+# Setup Static Files
 
-1. Masuk di https://travis-ci.org menggunakan account https://github.com. Lalu hubungkan travis-ci dan repository.
-2. Buat file `.travis.yml` di folder root project.
-    ```yml
-    language: node_js
-    node_js:
-    - 8
-    cache: yarn
-    install:
-    - npm install -g firebase-tools
-    after_success:
-    - firebase deploy --token "$FIREBASE_TOKEN"
+1. Pindahkan folder public ke dalam folder dist:
     ```
-3. Buat **Environment Variables** di menu `More Options > Settings` dengan nama variabel `FIREBAE_TOKEN`. Nilainya berasal dari command berikut:
-   ```
-   $ firebase login:ci
-   ```
-4. Simpan dan push perubahan terakhir ke github. Lalu periksa firebase deployment history. Log proses deployment di travis-ci untuk proyek ini bisa diakses di sini: https://travis-ci.org/ynwd/express-react
+    $ mv public/ dist/ 
+    ```
+2. Update file `server.js`:
+    ```js
+    const functions = require("firebase-functions")
+    const express = require("express")
+    const path = require("path")
+
+    const app = express()
+    const PUBLIC_DIR = path.join(__dirname, 'public')
+    app.use(express.static(PUBLIC_DIR))
+
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(PUBLIC_DIR, 'default.html'))
+    })
+
+    exports.api = functions.https.onRequest(app)
+    ```
+3. Update `webpack.config.js`. Tambahkan `node`:
+    ```js
+    node: {
+      __dirname: false,
+      __filename: false
+    },
+    ```
+4. Jalankan `build` dan `start`
+    ```
+    $ npm run build
+    $ npm start
+    ```
+5. Deploy:
+    ```
+    $ npm run deploy
+    ```

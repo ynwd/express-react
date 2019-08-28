@@ -23,6 +23,10 @@ module.exports = {
   output: {
     libraryTarget: 'commonjs'
   },
+  node: {
+    __dirname: false,
+    __filename: false
+  },
   externals: [nodeExternals()],
   plugins: [new GenerateJsonPlugin('package.json', genPackage())]
 }
