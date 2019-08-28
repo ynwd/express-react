@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=master)](https://travis-ci.org/ynwd/express-react)
+
 # Setup Static Files
 
 1. Pindahkan folder public ke dalam folder dist:
