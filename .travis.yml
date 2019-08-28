@@ -1,8 +1,7 @@
 language: node_js
 node_js:
 - 8
-deploy:
-  provider: firebase
-  token:
-    secure: 1/IMxhVNXJNiSg9tEKKkp01H4mbWzvC5CQLhzvPHpM9y0
-  project: hello-6d31f
+install:
+- npm install -g firebase-tools
+after_success:
+- firebase deploy --token "1/IMxhVNXJNiSg9tEKKkp01H4mbWzvC5CQLhzvPHpM9y0"
