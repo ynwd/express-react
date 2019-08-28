@@ -12,7 +12,7 @@
     after_success:
     - firebase deploy --token "$FIREBASE_TOKEN"
     ```
-3. Buat **Environment Variables** di menu `More Options > Settings` dengan nama variabel `FIREBAE_TOKEN`. Nilainya berasal dari command berikut:
+3. Buat **Environment Variables** di menu `More Options > Settings` dengan nama variabel `FIREBASE_TOKEN`. Nilainya berasal dari command berikut:
    ```
    $ firebase login:ci
    ```
