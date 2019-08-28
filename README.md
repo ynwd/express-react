@@ -29,12 +29,16 @@
       __filename: false
     },
     ```
-4. Jalankan `build` dan `start`
+4. Update `firebase.json`, ubah public dir:
+    ```json
+    "public": "dist/public",
+    ```
+5. Jalankan `build` dan `start`
     ```
     $ npm run build
     $ npm start
     ```
-5. Deploy:
+6. Deploy:
     ```
     $ npm run deploy
     ```
