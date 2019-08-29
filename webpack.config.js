@@ -20,8 +20,23 @@ module.exports = {
     server: './src/server.js'
   },
   target: 'node',
+  devtool: 'source-map',
   output: {
     libraryTarget: 'commonjs'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
   },
   node: {
     __dirname: false,
