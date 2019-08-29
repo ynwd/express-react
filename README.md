@@ -8,77 +8,35 @@
 3. [Setup CI/CD dengan Travis-CI](https://github.com/ynwd/express-react/tree/setup-travis)
 4. [Setup Static Files](https://github.com/ynwd/express-react/tree/setup-static-files)
 5. [Setup React](https://github.com/ynwd/express-react/tree/setup-react)
+6. [Menggunakan Fitur ES6 dengan Babel](https://github.com/ynwd/express-react/tree/setup-babel)
 
-## 6. Setup Babel
+## 7. Penerapan Coding Standard dengan ESLint
+1. Install eslint:
+    ```
+    $ npm i eslint -D
+    ```
+2. Jalankan `eslint --init`:
+    ```
+    $ npx eslint --init
+    ```
+    Pilih yang standard. Proses ini akan menghasilkan file `.eslintrc.js`.
 
-1. Update `webpack.config.js`,tambahkan `module` dan `devtool`:
+3. Install `babel-eslint`:
+    ```
+    $ npm i babel-eslint -D
+    ```
+4. Update `.eslintrc.js`, tambahkan `parser`:
     ```js
-    const pkg = require('./package')
-    const GenerateJsonPlugin = require('generate-json-webpack-plugin')
-    const nodeExternals = require('webpack-node-externals')
-
-    const genPackage = () => ({
-      main: 'server.js',
-      engines: {
-        node: '8'
-      },
-      scripts: {
-        build: 'npm install'
-      },
-      dependencies: pkg.dependencies,
-      private: true
-    })
-
-    module.exports = {
-      mode: 'production',
-      entry: {
-        server: './src/server.js'
-      },
-      target: 'node',
-      devtool: 'source-map',
-      output: {
-        libraryTarget: 'commonjs'
-      },
-      module: {
-        rules: [
-          {
-            test: /\.m?js$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-env']
-              }
-            }
-          }
-        ]
-      },
-      node: {
-        __dirname: false,
-        __filename: false
-      },
-      externals: [nodeExternals()],
-      plugins: [new GenerateJsonPlugin('package.json', genPackage())]
-    }
+    parser: 'babel-eslint'
     ```
-2. Update `server.js`:
+6. Update konfigurasi webpack. Tambahkan rule eslint:
     ```js
-    import { https } from 'firebase-functions'
-    import express from 'express'
-    import path from 'path'
-
-    const app = express()
-    const PUBLIC_DIR = path.join(__dirname, 'public')
-    app.use(express.static(PUBLIC_DIR))
-
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(PUBLIC_DIR, 'default.html'))
-    })
-
-    exports.api = https.onRequest(app)
+    {
+      enforce: 'pre',
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader'
+    },
     ```
-3. Jalankan `build` dan `start`:
-    ```
-    $ npm run build
-    $ npm start
-    ```
+7. Rename file `index.js` menjadi `index.jsx`.
+8. Buka folder src. Betulkan semua yang masih berwarna merah.

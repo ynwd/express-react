@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'production',
   entry: {
-    index: './src/index.js'
+    index: './src/index.jsx'
   },
   output: {
     path: path.join(__dirname, './dist/public'),
@@ -15,6 +15,12 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -30,7 +36,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'default.html',
-      template: './src/index.html',
+      template: './src/index.html'
     })
   ]
 }
