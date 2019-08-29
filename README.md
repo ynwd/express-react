@@ -3,9 +3,9 @@
 # Integrasi Express, React, Webpack dan Firebase
 
 ## Langkah sebelumnya
-1. [Setup Express di Localhost](https://github.com/ynwd/express-react/tree/setup-express)
+1. [Setup Express dan Webpack](https://github.com/ynwd/express-react/tree/setup-express)
 2. [Deploy Express di Firebase](https://github.com/ynwd/express-react/tree/setup-firebase)
-3. [CI/CD dengan Travis](https://github.com/ynwd/express-react/tree/setup-travis)
+3. [Setup CI/CD dengan Travis-CI](https://github.com/ynwd/express-react/tree/setup-travis)
 4. [Setup Static Files](https://github.com/ynwd/express-react/tree/setup-static-files)
 
 ## Setup React
