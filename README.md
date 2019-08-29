@@ -8,7 +8,7 @@
 3. [Setup CI/CD dengan Travis-CI](https://github.com/ynwd/express-react/tree/setup-travis)
 4. [Setup Static Files](https://github.com/ynwd/express-react/tree/setup-static-files)
 
-## Setup React
+## 5. Setup React
 
 1. Sebelumnya, kita telah menentukan function direktori firebase di `dist`. 
     Direktori ini berisi hasil bundling `webpack` dan static files express di folder public. Folder semacam ini, idealnya tidak perlu kita upload di repository git. Jadi kita masukkan ke dalam list `.gitignore`:
