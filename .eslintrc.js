@@ -1,4 +1,9 @@
 module.exports = {
+  settings: {
+    react: {
+      version: require('./package.json').dependencies.react,
+    },
+  },
   env: {
     browser: true,
     es6: true,
