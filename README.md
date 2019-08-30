@@ -1,16 +1,6 @@
-[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=master)](https://travis-ci.org/ynwd/express-react)
+[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=setup-eslint)](https://travis-ci.org/ynwd/express-react)
 
-# Integrasi Express, React, Webpack dan Firebase
-
-## Langkah sebelumnya
-1. [Setup Express dan Webpack](https://github.com/ynwd/express-react/tree/setup-express)
-2. [Deploy Express di Firebase](https://github.com/ynwd/express-react/tree/setup-firebase)
-3. [Setup CI/CD dengan Travis-CI](https://github.com/ynwd/express-react/tree/setup-travis)
-4. [Setup Static Files](https://github.com/ynwd/express-react/tree/setup-static-files)
-5. [Setup React](https://github.com/ynwd/express-react/tree/setup-react)
-6. [Menggunakan Fitur ES6 dengan Babel](https://github.com/ynwd/express-react/tree/setup-babel)
-
-## 7. Penerapan Coding Standard dengan ESLint
+# Penerapan Coding Standard dengan ESLint
 1. Install eslint:
     ```
     $ npm i eslint -D
