@@ -8,3 +8,6 @@ install:
 after_success:
 - npm run build 
 - firebase deploy --token "$FIREBASE_TOKEN"
+branches:
+  only:
+  - master
