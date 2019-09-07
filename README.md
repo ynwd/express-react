@@ -27,15 +27,14 @@
     ```
     $ npm i jest supertest enzyme enzyme-adapter-react-16 -D
     ```
-5. Update file `.eslintrc.js` bagian `env` dan `parser`:
+5. Update file `.eslintrc.js` bagian `env`:
     ```js
     env: {
       browser: true,
       es6: true,
       node: true,
       jest: true
-    },
-    parser: 'babel-eslint'
+    }
     ```
 6. Buat folder `tests`.
     ```
