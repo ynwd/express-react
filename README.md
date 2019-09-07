@@ -15,6 +15,6 @@
 
 
 [travis-url]: https://travis-ci.org/ynwd/express-react
-[coveralls-url]: https://coveralls.io/r/expressjs/express?branch=master
+[coveralls-url]: https://coveralls.io/r/ynwd/express-react?branch=master
 [travis-image]: https://travis-ci.org/ynwd/express-react.svg?branch=master
 [coveralls-image]: https://coveralls.io/repos/github/ynwd/express-react/badge.svg?branch=master
