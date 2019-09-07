@@ -42,6 +42,6 @@
     ```
 
 [travis-url]: https://travis-ci.org/ynwd/express-react
-[coveralls-url]: https://coveralls.io/r/expressjs/express?branch=setup-coveralls
+[coveralls-url]: https://coveralls.io/r/ynwd/express-react?branch=setup-coveralls
 [coveralls-image]: https://coveralls.io/repos/github/ynwd/express-react/badge.svg?branch=setup-coveralls
 [travis-image]: https://travis-ci.org/ynwd/express-react.svg?branch=setup-coveralls
