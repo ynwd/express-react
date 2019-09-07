@@ -12,6 +12,7 @@
 7. [Penerapan Coding Standard dengan ESLint](https://github.com/ynwd/express-react/tree/setup-eslint)
 8. [Testing Aplikasi dengan Jest, Supertest, dan Enzyme](https://github.com/ynwd/express-react/tree/setup-test)
 9. [Setup Coveralls](https://github.com/ynwd/express-react/tree/setup-coveralls)
+10. [Setup Register Page](https://github.com/ynwd/express-react/tree/setup-register)
 
 
 [travis-url]: https://travis-ci.org/ynwd/express-react
