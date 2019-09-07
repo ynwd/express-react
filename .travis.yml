@@ -1,12 +1,10 @@
 language: node_js
 node_js:
 - 8
-cache: yarn
+cache: npm
 install:
 - npm install
 after_success:
 - npm run build 
+- npm test
 - npm run deploy:firebase "$FIREBASE_TOKEN"
-branches:
-  only:
-  - master

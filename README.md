@@ -1,8 +1,7 @@
-[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=master)](https://travis-ci.org/ynwd/express-react)
+[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=setup-test)](https://travis-ci.org/ynwd/express-react)
 
-# Integrasi Express, React, Webpack dan Firebase
+# Express, React, dan Webpack di Firebase
 
-## Langkah sebelumnya
 1. [Setup Express dan Webpack](https://github.com/ynwd/express-react/tree/setup-express)
 2. [Deploy Express di Firebase](https://github.com/ynwd/express-react/tree/setup-firebase)
 3. [Setup CI/CD dengan Travis-CI](https://github.com/ynwd/express-react/tree/setup-travis)
