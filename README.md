@@ -10,3 +10,4 @@
 6. [Menggunakan Fitur ES6 dengan Babel](https://github.com/ynwd/express-react/tree/setup-babel)
 7. [Penerapan Coding Standard dengan ESLint](https://github.com/ynwd/express-react/tree/setup-eslint)
 8. [Testing Aplikasi dengan Jest, Supertest, dan Enzyme](https://github.com/ynwd/express-react/tree/setup-test)
+9. [Setup Coveralls](https://github.com/ynwd/express-react/tree/setup-coveralls)
