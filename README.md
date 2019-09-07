@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=master)](https://travis-ci.org/ynwd/express-react)
+[![Build Status](https://travis-ci.org/ynwd/express-react.svg?branch=setup-babel)](https://travis-ci.org/ynwd/express-react)
 
 # Setup Babel
 
