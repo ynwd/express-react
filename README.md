@@ -1,3 +1,4 @@
+[![Github][github-image]][github-url]
 [![Linux Build][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
@@ -19,3 +20,5 @@
 [coveralls-url]: https://coveralls.io/r/ynwd/express-react?branch=master
 [travis-image]: https://travis-ci.org/ynwd/express-react.svg?branch=master
 [coveralls-image]: https://coveralls.io/repos/github/ynwd/express-react/badge.svg?branch=master
+[github-url]: https://github.com/ynwd/express-react/actions
+[github-image]: https://github.com/ynwd/express-react/workflows/build/badge.svg
